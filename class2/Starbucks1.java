@@ -1,7 +1,7 @@
 /**
  * Simulate a Starbucks with Multiple Coffee Orders.
  */
-public class Starbucks {
+public class Starbucks1 {
 
     public static void main(String[] args) {
         System.out.println("Opening Starbucks");
