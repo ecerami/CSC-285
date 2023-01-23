@@ -1,3 +1,6 @@
+/**
+ * Used to Illustrate Abstract Methods.
+ */
 public class Game {
 
     public static void main(String[] args) {
