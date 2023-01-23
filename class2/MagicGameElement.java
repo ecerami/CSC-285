@@ -1,3 +1,7 @@
+/**
+ * Magic Game Element.
+ * Used to illustrate abstraction.
+ */
 public abstract class MagicGameElement {
 
     /**
