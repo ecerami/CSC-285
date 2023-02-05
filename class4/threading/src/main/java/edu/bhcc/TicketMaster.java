@@ -28,4 +28,11 @@ public class TicketMaster {
         }
         this.numTicketsToSell = updatedNumTickets;
     }
+
+    /**
+     * Get Number of Tickets Left to Sell.
+     */
+    public int getNumTicketsToSell() {
+        return numTicketsToSell;
+    }
 }
