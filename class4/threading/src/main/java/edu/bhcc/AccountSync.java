@@ -1,9 +1,9 @@
 package edu.bhcc;
 
 /**
- * Account Class.
+ * Account Class w/o Sync Support.
  */
-public class Account {
+public class AccountSync {
     private int balance = 0;
 
     /**
@@ -15,9 +15,10 @@ public class Account {
 
     /**
      * Deposit the specified amount.
+     * Note the synchronized keyword.
      * @param amount amount to add.
      */
-    public void deposit (int amount) {
+    public synchronized void deposit (int amount) {
         int newBalance = this.balance + amount;
 
         // Introduce a tiny delay to magnify the problem.

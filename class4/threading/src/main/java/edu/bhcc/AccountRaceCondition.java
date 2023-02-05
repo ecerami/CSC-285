@@ -7,10 +7,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * Illustrates race conditions in multithreaded applications.
  */
-public class AccountWithoutSync {
+public class AccountRaceCondition {
 
     public static void main(String[] args) {
-        Account account = new Account();
+        AccountNoSync account = new AccountNoSync();
         System.out.println("Account balance starts at:  " + account.getBalance());
 
         // Create a new thread pool with new threads as needed
@@ -18,7 +18,7 @@ public class AccountWithoutSync {
 
         //  Launch 100 Parallel Tasks and run them in the thread pool
         for (int i=0; i<100; i++) {
-            AddAPennyTask task = new AddAPennyTask(account);
+            AddAPennyTaskNoSync task = new AddAPennyTaskNoSync(account);
             System.out.println("Launching new task " + i);
             executor.execute(task);
         }
