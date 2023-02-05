@@ -20,11 +20,12 @@ public class Account {
     public void deposit (int amount) {
         int newBalance = this.balance + amount;
 
-        // Introduce a delay to magnify the problem.
+        // Introduce a tiny delay to magnify the problem.
         try {
-            Thread.sleep(5);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        this.balance = newBalance;
     }
 }
