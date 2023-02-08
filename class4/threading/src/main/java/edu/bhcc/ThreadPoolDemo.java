@@ -2,6 +2,7 @@ package edu.bhcc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Demo of Java Thread Pools.
@@ -25,7 +26,14 @@ public class ThreadPoolDemo {
         executor.execute(printC);
         executor.execute(print100);
 
-        //  Shut down the Thread Pool
+        //  Prevent new threads from being added and wind down.
         executor.shutdown();
+
+        //  Wait for all tasks to complete;  here we wait a max of 1 minute.
+        try {
+            executor.awaitTermination(1, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
