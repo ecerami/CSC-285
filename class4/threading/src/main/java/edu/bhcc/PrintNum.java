@@ -1,10 +1,14 @@
 package edu.bhcc;
 
+/**
+ * Print Numbers Task.
+ */
 public class PrintNum implements Runnable {
     private int lastNum;
 
     /**
-     * Last Number.
+     * Constructor.
+      * @param lastNum Print 0..lastNum.
      */
     public PrintNum(int lastNum) {
         this.lastNum = lastNum;

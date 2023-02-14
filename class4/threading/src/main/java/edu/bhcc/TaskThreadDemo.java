@@ -1,10 +1,13 @@
 package edu.bhcc;
 
 /**
- * Demo of Tasks.
+ * Demo of Thread Tasks.
  */
 public class TaskThreadDemo {
 
+    /**
+     * Spin up three tasks and run in parallel threads.
+     */
     public static void main(String[] args) {
         Runnable printA = new PrintChar('a', 100);
         Runnable printB = new PrintChar('b', 100);

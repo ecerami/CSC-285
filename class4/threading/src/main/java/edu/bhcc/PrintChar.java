@@ -1,8 +1,7 @@
 package edu.bhcc;
 
 /**
- * Hello world!
- *
+ * Print Character Task.
  */
 public class PrintChar implements Runnable {
     private char charToPrint;
