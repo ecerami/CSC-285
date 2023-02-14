@@ -12,6 +12,9 @@ public class BankAccount {
     private Lock lock = new ReentrantLock();
     private Condition newDeposit = lock.newCondition();
 
+    /**
+     * Get Current Balance.
+     */
     public int getBalance() {
         return balance;
     }
@@ -31,7 +34,7 @@ public class BankAccount {
             balance -= amount;
             System.out.println("\t\t\t\tWithdraw " + amount + "\t\t" + getBalance());
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } finally {
             lock.unlock();
         }

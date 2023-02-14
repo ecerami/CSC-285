@@ -6,6 +6,9 @@ package edu.bhcc;
 public class DepositTask implements Runnable {
     private BankAccount bankAccount;
 
+    /**
+     * Constructor.
+     */
     public DepositTask(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
     }
@@ -21,7 +24,7 @@ public class DepositTask implements Runnable {
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
     }

@@ -1,8 +1,14 @@
 package edu.bhcc;
 
+/**
+ * Withdraw Task.
+ */
 public class WithdrawTask implements Runnable {
     private BankAccount bankAccount;
 
+    /**
+     * Constructor.
+     */
     public WithdrawTask(BankAccount bankAccount) {
         this.bankAccount = bankAccount;
     }
