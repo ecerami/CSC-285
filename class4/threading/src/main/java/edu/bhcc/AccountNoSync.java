@@ -2,6 +2,7 @@ package edu.bhcc;
 
 /**
  * Account Class w/o Sync Support.
+ * This class is *not* thread safe.
  */
 public class AccountNoSync {
     private int balance = 0;

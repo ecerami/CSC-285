@@ -13,8 +13,8 @@ public class AccountRaceCondition {
         AccountNoSync account = new AccountNoSync();
         System.out.println("Account balance starts at:  " + account.getBalance());
 
-        // Create a new thread pool with new threads as needed
-        ExecutorService executor = Executors.newCachedThreadPool();
+        // Create a thread pool
+        ExecutorService executor = Executors.newFixedThreadPool(100);
 
         //  Launch 100 Parallel Tasks and run them in the thread pool
         for (int i=0; i<100; i++) {
@@ -30,10 +30,10 @@ public class AccountRaceCondition {
         try {
             executor.awaitTermination(1, TimeUnit.MINUTES);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
-        //  We added 100 pennies.
+        //  We tried to add 100 pennies.
         //  Does this match the account balance?
         System.out.println("Account is now:  " + account.getBalance());
     }
