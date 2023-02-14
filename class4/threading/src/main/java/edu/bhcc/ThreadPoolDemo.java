@@ -9,6 +9,9 @@ import java.util.concurrent.TimeUnit;
  */
 public class ThreadPoolDemo {
 
+    /**
+     * Create a Fixed Thread Pool for All Worker Threads.
+     */
     public static void main(String[] args) {
         //  Create the Runnable Tasks
         Runnable printA = new PrintChar('a', 100);
@@ -33,7 +36,7 @@ public class ThreadPoolDemo {
         try {
             executor.awaitTermination(1, TimeUnit.MINUTES);
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
