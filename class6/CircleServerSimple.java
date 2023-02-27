@@ -39,6 +39,7 @@ public class CircleServerSimple {
 
         // Send result back to client
         outputToClient.writeDouble(area);
+        outputToClient.flush();
 
         //  Stop the Server
         socket.close();

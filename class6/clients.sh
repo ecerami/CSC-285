@@ -1,4 +1,4 @@
 for n in {1..100}; 
 do
-	java -classpath out/production/class5/ CircleClient $n
+	java -classpath out/production/class6/ CircleClient $n
 done
