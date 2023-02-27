@@ -33,6 +33,7 @@ public class HandleCircleRequest implements Runnable{
 
             // Send result back to client
             outputToClient.writeDouble(area);
+            outputToClient.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
