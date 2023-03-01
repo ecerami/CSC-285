@@ -41,8 +41,9 @@ public class CircleServerSimple {
         outputToClient.writeDouble(area);
         outputToClient.flush();
 
-        //  Stop the Server
+        //  Stop everything
         socket.close();
+        serverSocket.close();
         System.out.println("Stopping server at:  " + new Date());
     }
 }
