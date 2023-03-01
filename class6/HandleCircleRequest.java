@@ -7,6 +7,7 @@ import java.net.Socket;
  * Handle a Circle Request.
  */
 public class HandleCircleRequest implements Runnable{
+    private Socket socket;
     private DataInputStream inputFromClient;
     private DataOutputStream outputToClient;
 
@@ -14,6 +15,7 @@ public class HandleCircleRequest implements Runnable{
      * Constructor.
      */
     public HandleCircleRequest(Socket socket) throws IOException {
+        this.socket = socket;
         this.inputFromClient = new DataInputStream(socket.getInputStream());
         this.outputToClient = new DataOutputStream(socket.getOutputStream());
     }
@@ -34,6 +36,7 @@ public class HandleCircleRequest implements Runnable{
             // Send result back to client
             outputToClient.writeDouble(area);
             outputToClient.flush();
+            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
