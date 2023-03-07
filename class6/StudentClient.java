@@ -14,8 +14,10 @@ public class StudentClient {
         //  Send Serialized Student over the Wire
         Socket socket = new Socket("localhost", 8000);
         System.out.println("Sending student:  " + student.getLastName());
+
         ObjectOutputStream toServer = new ObjectOutputStream(socket.getOutputStream());
         toServer.writeObject(student);
+        toServer.flush();
 
         //  Get Server Response
         InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
