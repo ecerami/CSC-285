@@ -1,4 +1,4 @@
-# Jetty Web Application 1
+# Jetty Web Application
 
 To run the server:
 
