@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<#include "header.html">
+<H2>${movie.getName()}</H2>
+<div class="description">
+${movie.getDescription()}
+</div>
+<p><img width="200px" src="${movie.getImgUrl()}"></p>
+<#include "footer.html">
+</body>
+</html>

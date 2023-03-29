@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<#include "header.html">
+<#list movie_list as movie>
+    <H2>${movie.getName()}</H2>
+    <div class="description">
+    ${movie.getDescription()}
+    </div>
+    <p><img width="200px" src="${movie.getImgUrl()}"></p>
+</#list>
+<#include "footer.html">
+</body>
+</html>

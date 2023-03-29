@@ -1,0 +1,19 @@
+body {
+    margin-left:40px;
+    font-family: Arial;
+}
+
+h1 {
+    color: navy;
+    border-bottom: solid 1px black;
+    padding-bottom: 5px;
+}
+
+.description {
+    width: 500px;
+}
+
+.footer {
+    color: gray;
+    font-size: 12px;
+}
