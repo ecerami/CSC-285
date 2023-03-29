@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<#include "header.html">
+<#list movie_list as movie>
+    <H2>${movie.getName()}</H2>
+    <p>${movie.getDescription()}</p>
+    <p><img width="200px" src="${movie.getImgUrl()}"></p>
+</#list>
+<#include "footer.html">
+</body>
+</html>
