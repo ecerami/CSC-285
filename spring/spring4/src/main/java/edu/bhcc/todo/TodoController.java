@@ -1,8 +1,10 @@
 package edu.bhcc.todo;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -36,13 +38,12 @@ public class TodoController {
     }
 
     @GetMapping("/todo/{id}")
-    public List<Todo> getTodoById(@PathVariable("id") Integer todoId) {
-        List<Todo> todoList = new ArrayList<>();
+    public Todo getTodoById(@PathVariable("id") Integer todoId) {
         Todo todo = repo.findById(todoId);
-        if (todo != null) {
-            todoList.add(todo);
+        if (todo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return todoList;
+        return todo;
     }
 
     @GetMapping("/todo/project/{project_name}")
@@ -50,27 +51,24 @@ public class TodoController {
         return repo.findByProject(projectName);
     }
 
-
     @GetMapping("/delete/{id}")
-    public List<Todo> deleteTodo(@PathVariable("id") Integer todoId) {
-        List<Todo> todoList = new ArrayList<>();
+    public Todo deleteTodo(@PathVariable("id") Integer todoId) {
         Todo todo = this.repo.findById(todoId);
-        if (todo != null) {
-            this.repo.delete(todo);
-            todoList.add(todo);
+        if (todo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return todoList;
+        this.repo.delete(todo);
+        return todo;
     }
 
     @GetMapping("/toggle/{id}")
-    public List<Todo> toggleTodo(@PathVariable("id") Integer todoId) {
-        List<Todo> todoList = new ArrayList<>();
+    public Todo toggleTodo(@PathVariable("id") Integer todoId) {
         Todo todo = this.repo.findById(todoId);
-        if (todo != null) {
-            todo.setCompleted(!todo.getCompleted());
-            this.repo.save(todo);
-            todoList.add(todo);
+        if (todo == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return todoList;
+        todo.setCompleted(!todo.getCompleted());
+        this.repo.save(todo);
+        return todo;
     }
 }
