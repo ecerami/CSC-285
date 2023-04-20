@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Web Forum</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <nav class="bg-body-secondary navbar mb-3 mt-3">
+        <div>
+      <span class="navbar-brand m-2 h1">
+            <i class="bi bi-people-fill me-2"></i><a href="/">Web Forum</a></span>
+        </div>
+    </nav>
+
+    <div th:if="${toast}" class="alert alert-primary" role="alert">
+        <i class="me-2 bi bi-info-circle"></i>
+        <span th:text="${toast}"/>
+    </div>
+    <div class="border p-3">
+        <h6><i class="bi bi-person-fill-add me-2"></i>Add New User</h6>
+        <form action="add_user" METHOD="GET" class="mb-2">
+            <div class="row">
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="First Name" name="first">
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="Last Name" name="last">
+                </div>
+                <div class="col-3">
+                    <input class="form-control" type="text" placeholder="User Name" name="userName">
+                </div>
+                <div class="col-1">
+                    <input type="submit" class="btn btn-primary" value="Add User"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="border mt-3 p-3">
+        <h6><i class="bi bi-megaphone me-2"></i>Add New Comment</h6>
+
+        <form action="add_comment" METHOD="GET" class="mb-2">
+            <div class="row">
+                <div class="col-2">
+                    <input class="form-control" type="text" placeholder="User Name" name="userName">
+                </div>
+                <div class="col-6">
+                    <input class="form-control" type="text" placeholder="Comment" name="comment">
+                </div>
+                <div class="col-1">
+                    <input type="submit" class="btn btn-primary" value="Add Comment"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="border p-3 mt-3">
+        <h6>Registered Users</h6>
+        <table class="table table-striped">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>User Name</th>
+                <th>Num Comments</th>
+                <th>Action</th>
+            </tr>
+            <tr th:each="user: ${user_list}">
+                <td th:text="${user.getFirstName()}"/>
+                <td th:text="${user.getLastName()}"/>
+                <td th:text="${user.getUserName()}"/>
+                <td th:text="${#lists.size(user.getComments())}"/>
+                <td><a th:href="@{/delete_user(id=${user.getUserId()})}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="border p-3 mt-3 mb-3">
+        <h6>Recent Comments</h6>
+        <table class="table table-striped">
+            <tr>
+                <th>User</th>
+                <th>Comment</th>
+                <th>Action</th>
+            </tr>
+            <tr th:each="comment: ${comment_list}">
+                <td th:text="${comment.getUser().getUserName()}"/>
+                <td th:text="${comment.getComment()}"/>
+                <td><a th:href="@{/delete_comment(id=${comment.getCommentId()})}">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
