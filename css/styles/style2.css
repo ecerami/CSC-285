@@ -4,12 +4,13 @@ body {
 }
   
 #main_header {
-    background-color:lightsteelblue;
+    background-color:lightgrey;
     padding:10px;
 }
 
 .jumbo {
-    font-size:36px;
+    padding-top:5px;
+    font-size:14px;
 }
 
 .number {

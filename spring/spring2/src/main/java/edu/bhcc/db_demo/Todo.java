@@ -6,7 +6,7 @@ import jakarta.persistence.*;
  * Customer Plain Old Java Object (POJO).
  */
 @Entity
-@Table(name = "todo")
+@Table(name="todo")
 public class Todo {
 
     @Id
