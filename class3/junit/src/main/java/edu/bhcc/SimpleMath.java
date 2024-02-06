@@ -1,8 +1,7 @@
 package edu.bhcc;
 
 /**
- * Rectangle Class.
- *
+ * Simple Math Class.
  */
 public class SimpleMath {
 
