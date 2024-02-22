@@ -14,7 +14,7 @@ public class AccountNoRaceCondition {
         System.out.println("Account balance starts at:  " + accountSync.getBalance());
 
         // Create a new thread pool with new threads as needed
-        ExecutorService executor = Executors.newCachedThreadPool();
+        ExecutorService executor = Executors.newFixedThreadPool(50);
 
         //  Launch 100 Parallel Tasks and run them in the thread pool
         for (int i=0; i<100; i++) {

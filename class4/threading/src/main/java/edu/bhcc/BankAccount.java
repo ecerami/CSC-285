@@ -20,19 +20,19 @@ public class BankAccount {
     }
 
     /**
-     * Withdraw a certain amount.
+     * Withdraw a certain withdrawalAmmount.
      */
-    public void withdraw(int amount) {
+    public void withdraw(int withdrawalAmmount) {
         // Obtain the lock
         lock.lock();
         try {
-            while (balance < amount) {
-                System.out.println("\t\t\t\tWait for: " + amount);
+            while (balance < withdrawalAmmount) {
+                System.out.println("\t\t\t\tWait for: " + withdrawalAmmount);
                 // Wait for the condition
                 newDeposit.await();
             }
-            balance -= amount;
-            System.out.println("\t\t\t\tWithdraw " + amount + "\t\t" + getBalance());
+            balance -= withdrawalAmmount;
+            System.out.println("\t\t\t\tWithdraw " + withdrawalAmmount + "\t\t" + getBalance());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

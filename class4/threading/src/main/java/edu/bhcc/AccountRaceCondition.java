@@ -14,7 +14,7 @@ public class AccountRaceCondition {
         System.out.println("Account balance starts at:  " + account.getBalance());
 
         // Create a thread pool
-        ExecutorService executor = Executors.newFixedThreadPool(100);
+        ExecutorService executor = Executors.newFixedThreadPool(50);
 
         //  Launch 100 Parallel Tasks and run them in the thread pool
         for (int i=0; i<100; i++) {

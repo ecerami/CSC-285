@@ -19,7 +19,7 @@ public class DepositTask implements Runnable {
     @Override
     public void run() {
         while (true) {
-            int randomAmount = (int)(Math.random() * 10) + 1;
+            int randomAmount = (int)(Math.random() * 9) + 1;
             this.bankAccount.deposit(randomAmount);
             try {
                 Thread.sleep(1000);
