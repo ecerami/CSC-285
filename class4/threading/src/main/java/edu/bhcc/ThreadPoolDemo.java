@@ -13,12 +13,6 @@ public class ThreadPoolDemo {
      * Create a Fixed Thread Pool for All Worker Threads.
      */
     public static void main(String[] args) {
-        //  Create the Runnable Tasks
-        Runnable printA = new PrintChar('a', 10);
-        Runnable printB = new PrintChar('b', 1000);
-        Runnable printC = new PrintChar('c', 100);
-        //Runnable print100 = new PrintNum(100);
-
         //  Create a Thread Pool
         //  Try experimenting with number of threads 1..4
         ExecutorService executor = Executors.newFixedThreadPool(10);
@@ -28,12 +22,6 @@ public class ThreadPoolDemo {
             Runnable print100 = new PrintNum(100);
             executor.execute(print100);
         }
-
-//        executor.execute(printA);
-//        executor.execute(printB);
-//        executor.execute(printC);
-//        executor.execute(print100);
-
         //  Prevent new threads from being added and wind down.
         executor.shutdown();
 
