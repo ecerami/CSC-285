@@ -8,6 +8,9 @@ import java.util.Date;
  */
 public class CircleServerMulti {
 
+    /**
+     * Run Multithreaded Server.
+     */
     public static void main(String[] args) throws IOException {
         System.out.println("Starting server at:  " + new Date());
         ServerSocket serverSocket = new ServerSocket(8000);
