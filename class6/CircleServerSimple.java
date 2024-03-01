@@ -12,6 +12,9 @@ import java.util.Date;
  */
 public class CircleServerSimple {
 
+    /**
+     * Run the Server.
+     */
     public static void main(String[] args) throws IOException {
         System.out.println("Starting server at:  " + new Date());
 
