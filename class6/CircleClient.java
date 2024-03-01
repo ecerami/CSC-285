@@ -8,6 +8,11 @@ import java.net.Socket;
  */
 public class CircleClient {
 
+    /**
+     * Run the Client.
+     * @param args Specify Radius Value, e.g. 3
+     * @throws IOException Network Error.
+     */
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket("localhost", 8000);
 
