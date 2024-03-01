@@ -6,6 +6,9 @@ import java.net.Socket;
  */
 public class StudentClient {
 
+    /**
+     * Run the Student Client.
+     */
     public static void main(String[] args) throws IOException {
         //  Create a Fake Student
         Student student = new Student

@@ -11,6 +11,9 @@ import java.util.concurrent.Executors;
 public class StudentServer {
     private static final int DEFAULT_NUM_THREADS = 6;
 
+    /**
+     * Start Student Server.
+     */
     public static void main(String[] args) throws IOException {
         System.out.println("Starting server at:  " + new Date());
         ServerSocket serverSocket = new ServerSocket(8000);
