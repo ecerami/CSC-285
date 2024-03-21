@@ -50,9 +50,9 @@ public class UserDb extends HttpServlet {
             writer.println("</html>");
 
         } catch (ClassNotFoundException e) {
-            writer.println("Could not connect to the database.");
+            writer.println("Class not found:   " + e.getMessage());
         } catch (SQLException e) {
-            writer.println("Could not connect to the database.");
+            writer.println("SQL Error:  " + e.getMessage());
         }
     }
 
