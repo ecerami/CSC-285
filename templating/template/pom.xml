@@ -9,10 +9,6 @@
   <packaging>war</packaging>
   <name>Jetty Web Template</name>
 
-  <properties>
-      <jettyVersion>11.0.14</jettyVersion>
-  </properties>
-
   <dependencies>
     <dependency>
       <groupId>jakarta.servlet</groupId>
@@ -32,9 +28,9 @@
       <plugin>
         <groupId>org.eclipse.jetty</groupId>
         <artifactId>jetty-maven-plugin</artifactId>
-        <version>${jettyVersion}</version>
+        <version>11.0.20</version>
       </plugin>
     </plugins>
   </build>
-
+  
 </project>
