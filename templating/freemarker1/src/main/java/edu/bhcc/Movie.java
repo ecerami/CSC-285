@@ -17,14 +17,26 @@ public class Movie {
         this.imgUrl = imgUrl;
     }
 
+    /**
+     * Get Movie Name.
+     * @return Movie Name.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Get Movie Description.
+     * @return Movie Description.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Get Image URL.
+     * @return Image URL.
+     */
     public String getImgUrl() {
         return imgUrl;
     }
