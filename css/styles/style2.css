@@ -1,16 +1,17 @@
 body {
     margin-left: 20px;
+    font-size:12px;
     font-family: Arial, Helvetica, sans-serif;
 }
   
 #main_header {
-    background-color:lightgrey;
-    padding:10px;
+    background-color:lightblue;
+    padding:5px;
 }
 
 .jumbo {
     padding-top:5px;
-    font-size:14px;
+    font-size:16px;
 }
 
 .number {
