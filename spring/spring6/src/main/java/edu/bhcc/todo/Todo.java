@@ -17,7 +17,7 @@ public class Todo {
     private Boolean completed;
 
     /**
-     * Protected Constructor, used by JPA..
+     * Protected Constructor, used by JPA.
      */
     protected Todo() {
     }
