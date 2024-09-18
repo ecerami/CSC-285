@@ -6,16 +6,23 @@ package edu.bhcc;
 public class SimpleHello {
 
     /**
-     * Say Hello!
+     * Say Hello.
+     *
+     * @param firstName User's First Name.
+     * @return Hello Message.
      */
-    static public String sayHello(String firstName) {
+    public String sayHello(String firstName) {
         return "Hello, " + firstName + "!";
     }
 
     /**
-     * Say Hello!
+     * Say Hello.
+     *
+     * @param firstName User's First Name.
+     * @param lastName  User's Last Name.
+     * @return Hello Message.
      */
-    static public String sayHello(String firstName, String lastName) {
+    public String sayHello(String firstName, String lastName) {
         return "Hello, " + firstName + " " + lastName + "!";
     }
 }

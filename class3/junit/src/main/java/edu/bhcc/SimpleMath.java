@@ -6,16 +6,22 @@ package edu.bhcc;
 public class SimpleMath {
 
     /**
-     * Add Two Integers.
+     * Add Two Numbers.
+     * @param a first number.
+     * @param b second number.
+     * @return sum of a and b.
      */
-    static public int add(int a, int b) {
+    public int add(int a, int b) {
         return a + b;
     }
 
     /**
-     * Multiple Two Integers.
+     * Multiple Two Numbers.
+     * @param a first number.
+     * @param b second number.
+     * @return a times b.
      */
-    static public int multiply(int a, int b) {
+    public int multiply(int a, int b) {
         return a * b;
     }
 }

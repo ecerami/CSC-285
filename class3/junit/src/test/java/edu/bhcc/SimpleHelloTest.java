@@ -10,13 +10,15 @@ public class SimpleHelloTest {
 
     @Test
     public void testHello1() {
-        String str = SimpleHello.sayHello("Ethan");
+        SimpleHello hello = new SimpleHello();
+        String str = hello.sayHello("Ethan");
         assertEquals("Hello, Ethan!", str);
     }
 
     @Test
     public void testHello2() {
-        String str = SimpleHello.sayHello("Ethan", "Cerami");
+        SimpleHello hello = new SimpleHello();
+        String str = hello.sayHello("Ethan", "Cerami");
         assertEquals("Hello, Ethan Cerami!", str);
     }
 }
