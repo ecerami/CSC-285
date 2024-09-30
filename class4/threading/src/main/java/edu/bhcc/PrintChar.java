@@ -15,7 +15,9 @@ public class PrintChar implements Runnable {
         this.times = times;
     }
 
-    @Override
+    /**
+     * Run!
+     */
     public void run() {
         for (int i=0; i<this.times; i++) {
             System.out.print(this.charToPrint);

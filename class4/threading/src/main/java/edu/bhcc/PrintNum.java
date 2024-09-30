@@ -14,7 +14,9 @@ public class PrintNum implements Runnable {
         this.lastNum = lastNum;
     }
 
-    @Override
+    /**
+     * Run!
+     */
     public void run() {
         for (int i=0; i<this.lastNum; i++) {
             System.out.print(i);
