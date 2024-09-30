@@ -22,7 +22,7 @@ public class TicketMaster {
 
         // Introduce a tiny delay to magnify the problem.
         try {
-            Thread.sleep(5);
+            Thread.sleep(1);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
