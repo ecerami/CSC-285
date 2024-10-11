@@ -23,7 +23,7 @@ public class AccountNoSync {
 
         // Introduce a tiny delay to magnify the problem.
         try {
-            Thread.sleep(1);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
