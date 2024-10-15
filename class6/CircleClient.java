@@ -16,8 +16,7 @@ public class CircleClient {
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket("localhost", 8000);
 
-        //  Get radius from command line
-        double radius = Double.parseDouble(args[0]);
+        double radius = 4.0;
 
         DataOutputStream toServer = new DataOutputStream(socket.getOutputStream());
         DataInputStream fromServer = new DataInputStream(socket.getInputStream());
