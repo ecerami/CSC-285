@@ -16,14 +16,8 @@ public class DbApp0 {
      * Execute Database Insert.
      */
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        //  Load the MySQL JDBC Driver
-        Class.forName("com.mysql.cj.jdbc.Driver");
-
-        //  Create connect string
-        String connectUrl = "jdbc:mysql://localhost/sample";
-
         //  Create JDBC Connection
-        Connection connection = DriverManager.getConnection(connectUrl, "user", "password");
+        Connection connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
 
         //  Create the SQL Statement
         Statement statement = connection.createStatement();
