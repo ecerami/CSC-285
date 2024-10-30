@@ -13,6 +13,11 @@ public class TextReader {
     private final File file;
     private final ArrayList<String> lines = new ArrayList<>();
 
+    /**
+     * Constructor.
+     * @param file File to read.
+     * @throws IOException IO Error.
+     */
     public TextReader(File file) throws IOException {
         this.file = file;
 
