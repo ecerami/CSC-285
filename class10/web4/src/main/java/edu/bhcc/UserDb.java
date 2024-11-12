@@ -27,7 +27,7 @@ public class UserDb extends HttpServlet {
 
         try {
             //  Get the Database Connection
-            Connection connection = this.getDbConnection();
+            Connection connection = DriverManager.getConnection("jdbc:sqlite:users.db");
 
             //  Query for all Users
             PreparedStatement pStatement = connection.prepareStatement("SELECT * FROM WEB_USER");
@@ -49,8 +49,6 @@ public class UserDb extends HttpServlet {
             writer.println("</body>");
             writer.println("</html>");
 
-        } catch (ClassNotFoundException e) {
-            writer.println("Class not found:   " + e.getMessage());
         } catch (SQLException e) {
             writer.println("SQL Error:  " + e.getMessage());
         }
