@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Unit test for Simple Math.
+ * Unit test for Simple Hello.
  */
 public class SimpleHelloTest {
 
