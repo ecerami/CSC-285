@@ -3,7 +3,7 @@ package edu.bhcc.db_demo;
 import jakarta.persistence.*;
 
 /**
- * Customer Plain Old Java Object (POJO).
+ * Todo Plain Old Java Object (POJO).
  */
 @Entity
 @Table(name="todo")
